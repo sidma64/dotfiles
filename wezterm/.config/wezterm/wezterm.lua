@@ -43,7 +43,7 @@ config.color_scheme = scheme_for_appearance(get_appearance())
 
 config.hide_tab_bar_if_only_one_tab = true
 
-config.enable_wayland = true 
+config.enable_wayland = false
 
 config.native_macos_fullscreen_mode = true
 
