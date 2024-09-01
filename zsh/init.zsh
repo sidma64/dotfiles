@@ -1,0 +1,1 @@
+run-plugin $(plugins)
