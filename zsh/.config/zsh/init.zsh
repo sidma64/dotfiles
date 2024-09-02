@@ -9,8 +9,9 @@ export PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
-zinit load zsh-users/zsh-syntax-highlighting
-zinit load zsh-users/zsh-autosuggestions
-zinit load zsh-users/zsh-completions
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-completions
+zinit light jeffreytse/zsh-vi-mode
 
-source functions.zsh
+source ${ZSH}/functions.zsh
