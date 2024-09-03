@@ -11,7 +11,7 @@ fzf --fish | source
 # Go package manager installations
 set GOPATH $HOME/go
 set GOBIN $GOPATH/bin
-set PATH $PATH:$GOBIN
+set PATH $PATH $GOBIN
 
 abbr browser $BROWSER
 abbr br $BROWSER
