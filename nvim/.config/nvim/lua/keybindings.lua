@@ -1,5 +1,4 @@
 return {
-	["<F2>"] = { MiniFiles.open, "Open mini.files" },
 	["<leader>"] = {
 		s = { "<cmd>Neotree<cr>", "Open neo-tree.nvim" },
 		w = { vim.cmd.write, "Write" },

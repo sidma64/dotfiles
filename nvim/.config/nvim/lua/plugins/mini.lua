@@ -8,6 +8,6 @@ return {
 		require("mini.tabline").setup()
 		require("mini.sessions").setup()
 		require("mini.indentscope").setup()
-		require("mini.files").setup()
+		-- require("mini.files").setup()
 	end,
 }
