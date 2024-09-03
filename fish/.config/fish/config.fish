@@ -11,6 +11,13 @@ fzf --fish | source
 # Go package manager installations
 set PATH $PATH:$HOME/go/bin
 
+abbr browser $BROWSER
+abbr br $BROWSER
+abbr editor $EDITOR
+abbr e $EDITOR
+
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
+
+
