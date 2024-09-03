@@ -13,10 +13,10 @@ set GOPATH $HOME/go
 set GOBIN $GOPATH/bin
 set PATH $PATH $GOBIN
 
-abbr browser $BROWSER
-abbr br $BROWSER
-abbr editor $EDITOR
-abbr e $EDITOR
+abbr --add browser $BROWSER
+abbr --add br $BROWSER
+abbr --add editor $EDITOR
+abbr --add e $EDITOR
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
