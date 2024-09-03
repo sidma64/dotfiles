@@ -9,7 +9,9 @@ zoxide init fish | source
 fzf --fish | source
 
 # Go package manager installations
-set PATH $PATH:$HOME/go/bin
+set GOPATH $HOME/go
+set GOBIN $GOPATH/bin
+set PATH $PATH:$GOBIN
 
 abbr browser $BROWSER
 abbr br $BROWSER
