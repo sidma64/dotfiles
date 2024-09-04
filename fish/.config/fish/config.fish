@@ -13,8 +13,6 @@ set GOPATH $HOME/go
 set GOBIN $GOPATH/bin
 set PATH $PATH $GOBIN
 
-
-
 abbr --add browser $BROWSER
 abbr --add br $BROWSER
 abbr --add editor $EDITOR
