@@ -47,6 +47,6 @@ config.enable_wayland = false
 
 config.native_macos_fullscreen_mode = true
 
-config.tab_bar_at_bottom = true
+config.tab_bar_at_bottom = false
 
 return config
