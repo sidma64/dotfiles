@@ -9,6 +9,9 @@ export PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
+# Setup node version manager
+eval "$(fnm env --use-on-cd --shell zsh)"
+
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions

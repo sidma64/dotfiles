@@ -1,10 +1,13 @@
 op completion fish | source
-
+set -a PATH $HOME/.local/bin
 # Enable vi keybindings
 function fish_user_key_bindings
   fish_vi_key_bindings
 end
+set -a PATH $HOME/.cargo/bin
 
+# Setup fnm for node version manager
+fnm env --use-on-cd --shell fish | source
 if command -q fisher
   echo "you need to install fisher - https://github.com/jorgebucaran/fisher#installation"
 end
