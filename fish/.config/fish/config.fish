@@ -63,7 +63,7 @@ abbr --add e $EDITOR
 if status is-interactive
     # Commands to run in interactive sessions can go here
     if command -q op
-      eval $(op signin)
+      # eval $(op signin)
     end
 end
 
