@@ -16,7 +16,9 @@ end
 set -a PATH $HOME/.cargo/bin
 
 # Setup fnm for node version manager
-fnm env --use-on-cd --shell fish | source
+if command -q fnm
+  fnm env --use-on-cd --shell fish | source
+end
 
 # Setup fisher for fish plugin manager
 if command -q fisher
