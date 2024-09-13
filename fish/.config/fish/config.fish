@@ -4,7 +4,7 @@ if command -q op
 end
 
 # Add local bin to path
-set -a PATH $HOME/.local/bin
+set PATH $HOME/.local/bin $PATH
 
 # Enable vi keybindings
 function fish_user_key_bindings
