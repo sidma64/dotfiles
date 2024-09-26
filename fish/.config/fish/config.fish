@@ -3,6 +3,8 @@ if command -q op
   op completion fish | source
 end
 
+fish_add_path $HOME/Applications
+
 # Add local bin to path
 set PATH $HOME/.local/bin $PATH
 
