@@ -6,7 +6,10 @@
             healthcheck is gone
         </comment>
     </note>
-    <note priority="low" time="1726357157">
+    <note priority="low" time="1726357157" done="1727421828">
         Learn moving windows through workspaces
+        <comment>
+            done
+        </comment>
     </note>
 </todo>

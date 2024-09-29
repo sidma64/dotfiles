@@ -16,12 +16,12 @@ config.font = wezterm.font_with_fallback({
 	-- {family = "Consolas", weight = "Regular"},
 })
 
-config.window_padding = {
-  left = 0,
-  right = 0,
-  top = 0,
-  bottom = 0,
-}
+-- config.window_padding = {
+--   left = 0,
+--   right = 0,
+--   top = 0,
+--   bottom = 0,
+-- }
 
 -- Ligatures: ->, =>, ==, ===, :=, !=, !==, >=, <=, =====>, <======, <------, |>
 config.keys = {
@@ -31,22 +31,21 @@ config.keys = {
 	},
 }
 
-local function get_appearance()
-  if wezterm.gui then
-    return wezterm.gui.get_appearance()
-  end
-  return 'Dark'
-end
+-- local function get_appearance()
+--   if wezterm.gui then
+--     return wezterm.gui.get_appearance()
+--   end
+--   return 'Dark'
+-- end
 
-local function scheme_for_appearance(appearance)
-  if appearance:find 'Dark' then
-    return 'Gruvbox dark, soft (base16)'
-  else
-    return 'Gruvbox light, soft (base16)'
-  end
-end
-
-config.color_scheme = scheme_for_appearance(get_appearance())
+-- local function scheme_for_appearance(appearance)
+--   if appearance:find 'Dark' then
+--     return 'Gruvbox light, soft (base16)'
+--   else
+--     return 'Gruvbox light, soft (base16)'
+--   end
+-- end
+config.color_scheme = 'Geohot (Gogh)'
 
 config.hide_tab_bar_if_only_one_tab = true
 
