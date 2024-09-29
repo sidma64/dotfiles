@@ -18,3 +18,5 @@ zinit light zsh-users/zsh-completions
 zinit light jeffreytse/zsh-vi-mode
 
 source ${ZSH}/functions.zsh
+
+alias firefox="firefox & disown"

@@ -25,4 +25,4 @@ require("settings")
 -- require("luasnip.loaders.from_vscode").lazy_load()
 
 -- Add keybindings with which-key
-require("which-key").register(require("keybindings"))
+-- require("which-key").register(require("keybindings"))

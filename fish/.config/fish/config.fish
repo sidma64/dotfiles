@@ -11,8 +11,10 @@ if command -q op
   op completion fish | source
 end
 
+fish_add_path $HOME/Applications
+
 # Add local bin to path
-set -a PATH $HOME/.local/bin
+set PATH $HOME/.local/bin $PATH
 
 # Enable vi keybindings
 function fish_user_key_bindings
