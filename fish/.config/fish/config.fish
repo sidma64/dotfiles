@@ -1,3 +1,11 @@
+set CC clang
+if command -q brew
+  set -a LDFLAGS "-L$(brew --prefix)/lib"
+  set -a CFLAGS -Weverything -pedantic -pedantic-errors -fshow-column -fshow-source-location -fcaret-diagnostics -fcolor-diagnostics
+  set -a CPPFLAGS "-I$(brew --prefix)/include"
+  set PATH $(brew --prefix)/opt/llvm/bin $PATH
+end
+
 # Setup completions for 1Password
 if command -q op
   op completion fish | source
@@ -28,9 +36,9 @@ if command -q fisher
 end
 
 # Setup exa for ls
-if command -q exa
-  function ls -w exa
-    exa -hg --icons --group-directories-first --color=auto $argv
+if command -q eza
+  function ls -w eza
+    eza -hg --icons --group-directories-first --color=auto $argv
   end
 else
   echo "you need to install exa - https://github.com/ogham/exa#installation"
