@@ -1,17 +1,23 @@
 
-# Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
-# Setup node version manager
-eval "$(fnm env --use-on-cd --shell zsh)"
+export ZSH="$HOME/.config/zsh"
+export ZSH_THEME="spaceship"
 
-zinit light zsh-users/zsh-autosuggestions
-zinit light zsh-users/zsh-completions
-zinit light jeffreytse/zsh-vi-mode
+source $ZSH/init.zsh
 
-source ${ZSH}/functions.zsh
+# Compilation flags
+# export ARCHFLAGS="-arch $(uname -m)"
 
-alias firefox="firefox & disown"
-eval "$(zoxide init zsh)"
-
-export ZSH=$HOME/.config/zsh
+# Set personal aliases, overriding those provided by Oh My Zsh libs,
+# plugins, and themes. Aliases can be placed here, though Oh My Zsh
+# users are encouraged to define aliases within a top-level file in
+# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
+# - $ZSH_CUSTOM/aliases.zsh
+# - $ZSH_CUSTOM/macos.zsh
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
