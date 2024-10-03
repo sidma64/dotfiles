@@ -7,6 +7,8 @@ export ZSH_THEME="spaceship"
 
 source $ZSH/init.zsh
 
+alias info="info --vi-keys"
+
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
 

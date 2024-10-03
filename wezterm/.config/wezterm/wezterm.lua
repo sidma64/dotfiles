@@ -45,7 +45,7 @@ config.keys = {
 --     return 'Gruvbox light, soft (base16)'
 --   end
 -- end
-config.color_scheme = 'Geohot (Gogh)'
+config.color_scheme = 'X::Erosion (terminal.sexy)'
 
 config.hide_tab_bar_if_only_one_tab = true
 
