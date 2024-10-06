@@ -4,6 +4,7 @@
 
 export ZSH="$HOME/.config/zsh"
 export ZSH_THEME="spaceship"
+alias e=$EDITOR
 
 source $ZSH/init.zsh
 
