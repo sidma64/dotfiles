@@ -21,3 +21,5 @@ eval "$(zoxide init zsh)"
 autoload -U colors && colors
 PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
 # zinit light zsh-users/zsh-syntax-highlighting
+
+source ${ZSH}/aliases.zsh
