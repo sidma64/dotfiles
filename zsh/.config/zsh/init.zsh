@@ -7,7 +7,9 @@ source "${ZINIT_HOME}/zinit.zsh"
 source <(fzf --zsh)
 
 # Setup node version manager
-eval "$(fnm env --use-on-cd --shell zsh)"
+if command -v fnm 2>&1 >/dev/null; then
+  eval "$(fnm env --use-on-cd --shell zsh)"
+fi
 
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
