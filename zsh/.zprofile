@@ -3,5 +3,7 @@
 #fi
 
 emulate sh
-. ~/.profile
+if [[ -f $HOME/.profile ]]; then
+  . $HOME/.profile
+fi
 emulate zsh

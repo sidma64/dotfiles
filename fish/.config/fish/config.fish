@@ -11,6 +11,7 @@ if command -q op
   op completion fish | source
 end
 
+
 fish_add_path $HOME/Applications
 
 # Add local bin to path
@@ -31,9 +32,9 @@ if command -q fnm
 end
 
 # Setup fisher for fish plugin manager
-if command -q fisher
-  echo "you need to install fisher - https://github.com/jorgebucaran/fisher#installation"
-end
+#if command -q fisher
+#  echo "you need to install fisher - https://github.com/jorgebucaran/fisher#installation"
+#end
 
 # Setup exa for ls
 if command -q eza
@@ -41,7 +42,13 @@ if command -q eza
     eza -hg --icons --group-directories-first --color=auto $argv
   end
 else
-  echo "you need to install exa - https://github.com/ogham/exa#installation"
+  if command -q apt
+    sudo apt install eza
+  else if command -q dnf
+    sudo dnf install eza
+  else
+    echo "you need to install exa - https://github.com/ogham/exa#installation"
+  end
 end
 
 # Setup Zoxide
