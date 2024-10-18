@@ -1,0 +1,6 @@
+[submodule "/Users/sidma/dotfiles/newvim/.config/nvim/pack/nvim/start/nvim-treesitter"]
+	path = /Users/sidma/dotfiles/newvim/.config/nvim/pack/nvim/start/nvim-treesitter
+	url = https://github.com/nvim-treesitter/nvim-treesitter
+[submodule "/Users/sidma/dotfiles/newvim/.config/nvim/pack/nvim/start/nvim-lspconfig"]
+	path = /Users/sidma/dotfiles/newvim/.config/nvim/pack/nvim/start/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig
