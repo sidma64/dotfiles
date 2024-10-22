@@ -26,3 +26,6 @@ alias info="info --vi-keys"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# bun completions
+[ -s "/Users/sidma/.bun/_bun" ] && source "/Users/sidma/.bun/_bun"
