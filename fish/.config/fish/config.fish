@@ -60,8 +60,8 @@ if command -q fzf
 end
 
 # Go package manager installations
-set -x GOPATH $HOME/go
-set -x GOBIN $GOPATH/bin
+set -gx GOPATH $HOME/go
+set -gx GOBIN $GOPATH/bin
 fish_add_path -p $GOBIN
 
 # Set default BROWSER and EDITOR 
