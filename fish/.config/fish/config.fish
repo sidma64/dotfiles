@@ -1,3 +1,5 @@
+fenv source $HOME/.profile
+
 set CC clang
 if command -q brew
     set -a LDFLAGS "-L$(brew --prefix)/lib"
