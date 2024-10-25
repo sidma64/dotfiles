@@ -17,7 +17,11 @@ if status is-login
         fish_add_path -p $HOME/.cargo/bin
     end
     fish_add_path -p $HOME/bin $HOME/.local/bin
+    if uname = "Darwin"
+        fish_add_path /opt/homebrew/bin
+    end
 end
+
 
 if status is-interactive
     # Setup Zoxide
