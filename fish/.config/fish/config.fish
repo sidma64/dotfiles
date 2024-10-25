@@ -32,11 +32,7 @@ if status is-interactive
     if command -q fzf
         fzf --fish | source
     end
-    # Set up abbreviations
-    abbr --add br $BROWSER
-    abbr --add e $EDITOR
 
-    # Setup exa for ls
     if command -q eza
         function ls -w eza
             eza -hg --icons --group-directories-first --color=auto $argv
