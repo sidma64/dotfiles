@@ -1,5 +1,8 @@
 
 if status is-login
+    if uname = "Darwin"
+        fish_add_path -p /opt/homebrew/bin
+    end
     # Go package manager installations
     set -gx GOPATH $HOME/go
     set -gx GOBIN $GOPATH/bin
@@ -17,9 +20,6 @@ if status is-login
         fish_add_path -p $HOME/.cargo/bin
     end
     fish_add_path -p $HOME/bin $HOME/.local/bin
-    if uname = "Darwin"
-        fish_add_path /opt/homebrew/bin
-    end
 end
 
 
