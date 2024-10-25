@@ -1,7 +1,3 @@
-# Enable vi keybindings
-function fish_user_key_bindings
-    fish_vi_key_bindings
-end
 
 if status is-login
     # Go package manager installations
@@ -18,8 +14,9 @@ if status is-login
     end
     # Setup cargo for rust
     if test -d $HOME/.cargo/
-        set -a PATH $HOME/.cargo/bin
+        fish_add_path -p $HOME/.cargo/bin
     end
+    fish_add_path -p $HOME/bin $HOME/.local/bin
 end
 
 if status is-interactive
@@ -38,5 +35,8 @@ if status is-interactive
             eza -hg --icons --group-directories-first --color=auto $argv
         end
     end
-
+    # Enable vi keybindings
+    function fish_user_key_bindings
+        fish_vi_key_bindings
+    end
 end
