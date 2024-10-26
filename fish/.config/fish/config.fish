@@ -10,10 +10,10 @@ if status is-login
 
     # Set default BROWSER and EDITOR 
     if not set -q BROWSER
-        set -x BROWSER firefox
+        set -gx BROWSER firefox
     end
     if not set -q EDITOR
-        set -x EDITOR nvim
+        set -gx EDITOR nvim
     end
     # Setup cargo for rust
     if test -d $HOME/.cargo/
