@@ -48,3 +48,7 @@ vim.cmd.colorscheme(vim.env.THEME)
 vim.api.nvim_create_user_command("Format", function(args)
 	require("conform").format({ bufnr = args.buf })
 end, {})
+
+vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')

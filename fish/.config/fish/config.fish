@@ -1,7 +1,8 @@
 
 if status is-login
-    if uname = "Darwin"
-        fish_add_path -p /opt/homebrew/bin
+    fish_add_path /usr/local/bin /usr/local/sbin /usr/bin /usr/sbin /bin /sbin
+    if test uname = "Darwin"
+        fish_add_path /opt/homebrew/bin
     end
     # Go package manager installations
     set -gx GOPATH $HOME/go
@@ -17,9 +18,9 @@ if status is-login
     end
     # Setup cargo for rust
     if test -d $HOME/.cargo/
-        fish_add_path -p $HOME/.cargo/bin
+        fish_add_path $HOME/.cargo/bin
     end
-    fish_add_path -p $HOME/bin $HOME/.local/bin
+    fish_add_path $HOME/bin $HOME/.local/bin
 end
 
 
