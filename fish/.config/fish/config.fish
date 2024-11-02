@@ -7,7 +7,7 @@ if status is-login
     # Go package manager installations
     set -gx GOPATH $HOME/go
     set -gx GOBIN $GOPATH/bin
-    fish_add_path -p $GOBIN
+    fish_add_path $GOBIN
 
     # Set default BROWSER and EDITOR 
     if not set -q BROWSER

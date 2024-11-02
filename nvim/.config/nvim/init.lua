@@ -44,6 +44,7 @@ vim.opt.relativenumber = true
 vim.opt.number = true
 vim.opt.clipboard = "unnamedplus"
 vim.cmd.colorscheme(vim.env.THEME)
+vim.opt.background = vim.env.THEME_MODE
 
 vim.api.nvim_create_user_command("Format", function(args)
 	require("conform").format({ bufnr = args.buf })
