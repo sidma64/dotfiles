@@ -3,7 +3,7 @@ if status is-login
     set -gx PATH /usr/local/bin /usr/local/sbin /usr/bin /usr/sbin /bin /sbin
     if test uname = Darwin
         set -gx HOMEBREW_PREFIX /opt/homebrew
-        . ($HOMEBREW_PREFIX/bin/brew shellenv)
+        eval ($HOMEBREW_PREFIX/bin/brew shellenv)
     end
     # Go package manager installations
     set -gx GOPATH $HOME/go
