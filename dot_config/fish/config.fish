@@ -1,8 +1,9 @@
 
 if status is-login
-    fish_add_path /usr/local/bin /usr/local/sbin /usr/bin /usr/sbin /bin /sbin
-    if test uname = "Darwin"
-        fish_add_path /opt/homebrew/bin
+    set -gx PATH /usr/local/bin /usr/local/sbin /usr/bin /usr/sbin /bin /sbin
+    if test uname = Darwin
+        set -gx HOMEBREW_PREFIX /opt/homebrew
+        . ($HOMEBREW_PREFIX/bin/brew shellenv)
     end
     # Go package manager installations
     set -gx GOPATH $HOME/go
