@@ -1,14 +1,14 @@
 
 if status is-login
-    set -gx PATH /usr/local/bin /usr/local/sbin /usr/bin /usr/sbin /bin /sbin
-    if test uname = Darwin
+    set -gxp PATH /usr/local/bin /usr/local/sbin /usr/bin /usr/sbin /bin /sbin
+    if test (uname) = Darwin
         set -gx HOMEBREW_PREFIX /opt/homebrew
         eval ($HOMEBREW_PREFIX/bin/brew shellenv)
     end
     # Go package manager installations
     set -gx GOPATH $HOME/go
     set -gx GOBIN $GOPATH/bin
-    fish_add_path $GOBIN
+    set -gxp PATH $GOBIN
 
     # Set default BROWSER and EDITOR 
     if not set -q BROWSER
@@ -19,9 +19,9 @@ if status is-login
     end
     # Setup cargo for rust
     if test -d $HOME/.cargo/
-        fish_add_path $HOME/.cargo/bin
+        set -gxp PATH $HOME/.cargo/bin
     end
-    fish_add_path $HOME/bin $HOME/.local/bin
+    set -gxp PATH $HOME/bin $HOME/.local/bin
 end
 
 
