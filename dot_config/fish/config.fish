@@ -23,6 +23,9 @@ if status is-login
     if test -d $HOME/.cargo/
         fish_add_path -gpm $HOME/.cargo/bin
     end
+    if test -d $HOME/.dotnet/
+        fish_add_path -gpm $HOME/.dotnet/ $HOME/.dotnet/tools
+    end
     fish_add_path -gpm $HOME/bin $HOME/.local/bin
 end
 
