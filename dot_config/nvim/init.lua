@@ -48,5 +48,5 @@ require("lazy").setup({
     },
   },
 })
-require("configs.keymaps")
+require("keymaps")
 vim.opt.number = true
