@@ -179,3 +179,5 @@
 [user]
 	name = sidma64
 	email = toprak.code@gmail.com
+[gpg]
+	format = ssh
