@@ -28,7 +28,24 @@ return {
       end)
     end,
   },
-  { "akinsho/toggleterm.nvim", version = "*", opts = {} },
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+    keys = {
+      {
+        "<leader>?",
+        function()
+          require("which-key").show({ global = false })
+        end,
+        desc = "Buffer Local Keymaps (which-key)",
+      },
+    },
+  },
   {
     "lewis6991/gitsigns.nvim",
     opts = {},
@@ -42,7 +59,6 @@ return {
       require("mini.icons").setup()
       require("mini.basics").setup()
       require("mini.bracketed").setup()
-      require("mini.statusline").setup()
       require("mini.comment").setup()
     end,
   },
@@ -172,7 +188,7 @@ return {
       })
     end,
   },
-  { "williamboman/mason.nvim", opts = {}, dependencies = { "williamboman/mason-lspconfig.nvim" } },
+  { "williamboman/mason.nvim",     opts = {}, dependencies = { "williamboman/mason-lspconfig.nvim" } },
   {
     "neovim/nvim-lspconfig",
     dependencies = { "saghen/blink.cmp" },
