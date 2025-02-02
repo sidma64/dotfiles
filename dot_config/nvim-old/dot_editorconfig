@@ -1,5 +1,0 @@
-root = true
-
-[*]
-indent_styple = "space"
-indent_size = 2
