@@ -1,0 +1,1 @@
+[2025-02-05 11:22:43 AM] I installed `jrnl`. As I am writing this, I am learning how to write a journal entry to the CLI.

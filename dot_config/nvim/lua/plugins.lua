@@ -1,5 +1,40 @@
-return {
-  -- Lua
+return { -- Lua
+  {
+    "f-person/auto-dark-mode.nvim",
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  },
+  { "catppuccin/nvim",             name = "catppuccin", priority = 1000 },
+  {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim",  -- required
+      "sindrets/diffview.nvim", -- optional - Diff integration
+
+      -- Only one of these is needed.
+      "nvim-telescope/telescope.nvim", -- optional
+    },
+    config = true
+  },
+
+  {
+    'Mofiqul/vscode.nvim',
+    config = function()
+      local code = require("vscode")
+      -- code.setup()
+      -- code.load("dark")
+    end
+  },
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    config = function()
+      -- vim.cmd("colorscheme rose-pine")
+    end
+  },
   {
     "folke/persistence.nvim",
     opts = {},
@@ -128,8 +163,8 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-      vim.o.background = "dark" -- or "light" for light mode
-      vim.cmd([[colorscheme gruvbox]])
+      -- vim.o.background = "dark" -- or "light" for light mode
+      -- vim.cmd([[colorscheme gruvbox]])
     end,
   },
   -- {
@@ -188,7 +223,7 @@ return {
       })
     end,
   },
-  { "williamboman/mason.nvim",     opts = {}, dependencies = { "williamboman/mason-lspconfig.nvim" } },
+  { "williamboman/mason.nvim", opts = {}, dependencies = { "williamboman/mason-lspconfig.nvim" } },
   {
     "neovim/nvim-lspconfig",
     dependencies = { "saghen/blink.cmp" },

@@ -1,4 +1,3 @@
-vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { desc = "LSP: [R]e[n]ame" })
 vim.keymap.set("n", "-", "<cmd>edit %:p:h<cr>", { desc = "Open parent directory" })
 
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -19,8 +18,23 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
-vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+if vim.g.neovide then
+  vim.keymap.set('n', '<D-s>', ':w<CR>')      -- Save
+  vim.keymap.set('v', '<D-c>', '"+y')         -- Copy
+  vim.keymap.set('n', '<D-v>', '"+P')         -- Paste normal mode
+  vim.keymap.set('v', '<D-v>', '"+P')         -- Paste visual mode
+  vim.keymap.set('c', '<D-v>', '<C-R>+')      -- Paste command mode
+  vim.keymap.set('i', '<D-v>', '<ESC>l"+Pli') -- Paste insert mode
+end
+
+-- Allow clipboard copy paste in neovim
+vim.api.nvim_set_keymap('', '<D-v>', '+p<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('!', '<D-v>', '<C-R>+', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<D-v>', '<C-R>+', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<D-v>', '<C-R>+', { noremap = true, silent = true })
