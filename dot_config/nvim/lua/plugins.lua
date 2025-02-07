@@ -230,6 +230,7 @@ return { -- Lua
     config = function()
       local configs = {
         ["lua_ls"] = {},
+        ["clangd"] = {},
       }
       local default_config = {}
       for name, config in pairs(configs) do

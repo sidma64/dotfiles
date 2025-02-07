@@ -27,7 +27,7 @@ require("lazy").setup({
     -- import your plugins
     { import = "plugins" },
   },
-  checker = { enabled = true },
+  checker = { enabled = false },
   {
     ui = {
       icons = {
@@ -50,4 +50,5 @@ require("lazy").setup({
 })
 
 vim.opt.number = true
-vim.cmd("colorscheme vscode")
+vim.o.clipboard = "unnamedplus"
+vim.cmd [[colorscheme retrobox]]
