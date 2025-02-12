@@ -4,8 +4,9 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
-
+if command -v fzf 2>&1 >/dev/null; then
+  source <(fzf --zsh)
+fi
 # Setup node version manager
 if command -v fnm 2>&1 >/dev/null; then
   eval "$(fnm env --use-on-cd --shell zsh)"
@@ -17,9 +18,10 @@ zinit light jeffreytse/zsh-vi-mode
 
 source ${ZSH}/functions.zsh
 
-alias firefox="firefox & disown"
-eval "$(zoxide init zsh)"
 
+if command -v zoxide 2>&1 >/dev/null; then
+  eval "$(zoxide init zsh)"
+fi
 autoload -U colors && colors
 PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
 # zinit light zsh-users/zsh-syntax-highlighting
