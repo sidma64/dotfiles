@@ -1,39 +1,49 @@
-return { -- Lua
+return {
+  {
+    "NStefan002/speedtyper.nvim",
+    branch = "v2",
+    lazy = false,
+  },
   {
     "f-person/auto-dark-mode.nvim",
     opts = {
       -- your configuration comes here
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
-    }
+    },
   },
-  { "catppuccin/nvim",             name = "catppuccin", priority = 1000 },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    -- opts = { transparent_background = true },
+    priority = 1000,
+  },
   {
     "NeogitOrg/neogit",
     dependencies = {
-      "nvim-lua/plenary.nvim",  -- required
+      "nvim-lua/plenary.nvim", -- required
       "sindrets/diffview.nvim", -- optional - Diff integration
 
       -- Only one of these is needed.
       "nvim-telescope/telescope.nvim", -- optional
     },
-    config = true
+    config = true,
   },
 
   {
-    'Mofiqul/vscode.nvim',
+    "Mofiqul/vscode.nvim",
     config = function()
-      local code = require("vscode")
+      -- local code = require("vscode")
       -- code.setup()
       -- code.load("dark")
-    end
+    end,
   },
   {
     "rose-pine/neovim",
     name = "rose-pine",
     config = function()
       -- vim.cmd("colorscheme rose-pine")
-    end
+    end,
   },
   {
     "folke/persistence.nvim",

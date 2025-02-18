@@ -16,12 +16,14 @@ config.font = wezterm.font_with_fallback({
 	-- {family = "Consolas", weight = "Regular"},
 })
 
--- config.window_padding = {
---   left = 0,
---   right = 0,
---   top = 0,
---   bottom = 0,
--- }
+config.use_resize_increments = true
+
+config.window_padding = {
+	left = 0,
+	right = 0,
+	top = 0,
+	bottom = 0,
+}
 
 -- Ligatures: ->, =>, ==, ===, :=, !=, !==, >=, <=, =====>, <======, <------, |>
 config.keys = {
@@ -45,7 +47,7 @@ config.keys = {
 --     return 'Gruvbox light, soft (base16)'
 --   end
 -- end
-config.color_scheme = 'Gruvbox Material (Gogh)'
+config.color_scheme = "Gruvbox Material (Gogh)"
 
 config.hide_tab_bar_if_only_one_tab = true
 
