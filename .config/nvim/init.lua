@@ -51,4 +51,4 @@ require("lazy").setup({
 
 vim.opt.number = true
 vim.o.clipboard = "unnamedplus"
-vim.cmd([[colorscheme vscode]])
+vim.cmd([[colorscheme minischeme]])
