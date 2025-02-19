@@ -3,34 +3,34 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 config.font = wezterm.font_with_fallback({
-	-- "IBM Plex Mono",
-	"JetBrains Mono",
-	-- "Iosevka",
-	-- "Fira Code",
-	-- "Terminus",
-	-- "Cascadia Code",
-	-- "Source Code Pro",
-	-- "Red Hat Mono",
-	-- "Overpass Mono",
-	-- { family = "Victor Mono", weight = "Bold"},
-	-- {family = "Consolas", weight = "Regular"},
+  -- "Terminus",
+  "Cascadia Code",
+  { family = "Fira Code" },
+  -- "Red Hat Mono",
+  -- "Overpass Mono",
+  -- { family = "Victor Mono", weight = "Bold"},
+  -- { family = "IBM Plex Mono" },
+  -- { family = "Iosevka Term", stretch = "Expanded", weight = "Regular" },
+  -- {family = "Consolas", weight = "Regular"},
+  { family = "Source Code Pro" },
+  "JetBrains Mono",
 })
 
 config.use_resize_increments = true
 
 config.window_padding = {
-	left = 0,
-	right = 0,
-	top = 0,
-	bottom = 0,
+  left = 0,
+  right = 0,
+  top = 0,
+  bottom = 0,
 }
 
 -- Ligatures: ->, =>, ==, ===, :=, !=, !==, >=, <=, =====>, <======, <------, |>
 config.keys = {
-	{
-		key = "F11",
-		action = wezterm.action.ToggleFullScreen,
-	},
+  {
+    key = "F11",
+    action = wezterm.action.ToggleFullScreen,
+  },
 }
 
 -- local function get_appearance()
