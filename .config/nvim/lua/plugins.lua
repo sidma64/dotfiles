@@ -241,6 +241,7 @@ return {
       local configs = {
         ["lua_ls"] = {},
         ["clangd"] = {},
+        ["pyright"] = {},
       }
       local default_config = {}
       for name, config in pairs(configs) do
