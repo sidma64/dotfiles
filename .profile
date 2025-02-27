@@ -21,13 +21,13 @@ if [ -d "$HOME/.local/bin" ]; then
 fi
 
 # Set environment variables
-if command -v nvim; then
+if [ -n "$(which nvim)" ]; then
     export EDITOR=nvim
-elif command -v vim; then
+elif [ -n "$(which vim)" ]; then
     export EDITOR=vim
-elif command -v vi; then
+elif [ -n "$(which vi)" ]; then
     export EDITOR=vi
-elif command -v nano; then
+elif [ -n "$(which nano)" ]; then
     export EDITOR=nano
 fi
 [ -n "$EDITOR" ] && [ -z "$VISUAL" ] && export VISUAL="$EDITOR"
@@ -40,8 +40,8 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 # Rust
-if [ -d "$HOME/.cargo/env" ]
-    . "$HOME/.cargo/env"
+if [ -d "$HOME/.cargo/env" ]; then
+    source "$HOME/.cargo/env"
 fi
 
 # Golang
