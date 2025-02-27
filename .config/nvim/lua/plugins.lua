@@ -242,6 +242,7 @@ return {
         ["lua_ls"] = {},
         ["clangd"] = {},
         ["pyright"] = {},
+        ["hyprls"] = {},
       }
       local default_config = {}
       for name, config in pairs(configs) do
@@ -267,6 +268,10 @@ return {
         rust = { "rustfmt", lsp_format = "fallback" },
         -- Conform will run the first available formatter
         javascript = { "prettierd", "prettier", stop_after_first = true },
+        typescript = { "prettierd", "prettier", stop_after_first = true },
+        json = { "prettierd", "prettier", stop_after_first = true },
+        jsonc = { "prettierd", "prettier", stop_after_first = true },
+        html = { "prettierd", "prettier", stop_after_first = true },
       },
     },
   },

@@ -4,15 +4,15 @@ local config = wezterm.config_builder()
 
 config.font = wezterm.font_with_fallback({
   -- "Terminus",
-  "Cascadia Code",
-  { family = "Fira Code" },
+  -- "Cascadia Code",
+  -- { family = "Fira Code" },
   -- "Red Hat Mono",
   -- "Overpass Mono",
   -- { family = "Victor Mono", weight = "Bold"},
   -- { family = "IBM Plex Mono" },
   -- { family = "Iosevka Term", stretch = "Expanded", weight = "Regular" },
   -- {family = "Consolas", weight = "Regular"},
-  { family = "Source Code Pro" },
+  -- { family = "Source Code Pro" },
   "JetBrains Mono",
 })
 
