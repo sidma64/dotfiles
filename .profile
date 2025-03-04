@@ -40,7 +40,7 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 # Rust
-if [ -d "$HOME/.cargo/env" ]; then
+if [ -d "$HOME/.cargo" ]; then
     source "$HOME/.cargo/env"
 fi
 
@@ -52,3 +52,13 @@ if [ -d "$HOME/go" ]; then
         export PATH="$GOBIN:$PATH"   
     fi
 fi
+
+# Reboot directly to Windows
+# Inspired by http://askubuntu.com/questions/18170/how-to-reboot-into-windows-from-ubuntu
+reboot_to_windows ()
+{
+    windows_title=$(sudo grep -i windows /boot/grub2/grub.cfg | cut -d "'" -f 2)
+    sudo grub2-reboot "$windows_title" && sudo reboot
+}
+alias reboot-to-windows='reboot_to_windows'
+
