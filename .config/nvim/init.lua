@@ -6,7 +6,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
       { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
+      { out,                            "WarningMsg" },
       { "\nPress any key to exit..." },
     }, true, {})
     vim.fn.getchar()
@@ -28,23 +28,25 @@ require("lazy").setup({
     { import = "plugins" },
   },
   checker = { enabled = false },
-  {
-    ui = {
-      icons = {
-        cmd = "⌘",
-        config = "🛠",
-        event = "📅",
-        ft = "📂",
-        init = "⚙",
-        keys = "🗝",
-        plugin = "🔌",
-        runtime = "💻",
-        require = "🌙",
-        source = "📄",
-        start = "🚀",
-        task = "📌",
-        lazy = "💤 ",
-      },
+  ui = {
+    icons = {
+      cmd = "⌘",
+      config = "🧰",
+      ft = "📂",
+      init = "⚙️ ",
+      keys = "🔑 ",
+      plugin = "🔌",
+      runtime = "💻",
+      require = "🌙",
+      source = "📁",
+      start = "🚀",
+      task = "📌",
+      lazy = "💤 ",
+      event = "⚡",
+      loaded = "✔️  ",
+      favorite = "⭐",
+      not_loaded = "❌ ",
+      import = "📥",
     },
   },
 })

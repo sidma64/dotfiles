@@ -2,6 +2,9 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 
+-- Spawn a fish shell in login mode
+config.default_prog = { '/bin/bash', '-l' }
+
 config.font = wezterm.font_with_fallback({
   -- "Terminus",
   -- "Cascadia Code",

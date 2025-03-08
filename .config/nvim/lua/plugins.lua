@@ -21,7 +21,7 @@ return {
   {
     "NeogitOrg/neogit",
     dependencies = {
-      "nvim-lua/plenary.nvim", -- required
+      "nvim-lua/plenary.nvim",  -- required
       "sindrets/diffview.nvim", -- optional - Diff integration
 
       -- Only one of these is needed.
@@ -233,7 +233,7 @@ return {
       })
     end,
   },
-  { "williamboman/mason.nvim", opts = {}, dependencies = { "williamboman/mason-lspconfig.nvim" } },
+  { "williamboman/mason.nvim",     opts = {}, dependencies = { "williamboman/mason-lspconfig.nvim" } },
   {
     "neovim/nvim-lspconfig",
     dependencies = { "saghen/blink.cmp" },

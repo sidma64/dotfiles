@@ -25,35 +25,55 @@ vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower win
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 if vim.g.neovide then
-  vim.keymap.set("n", "<D-s>", ":w<CR>") -- Save
-  vim.keymap.set("v", "<D-c>", '"+y') -- Copy
-  vim.keymap.set("n", "<D-v>", '"+P') -- Paste normal mode
-  vim.keymap.set("v", "<D-v>", '"+P') -- Paste visual mode
-  vim.keymap.set("c", "<D-v>", "<C-R>+") -- Paste command mode
+  vim.keymap.set("v", "<D-c>", '"+y')         -- Copy
+  vim.keymap.set("n", "<D-v>", '"+P')         -- Paste normal mode
+  vim.keymap.set("v", "<D-v>", '"+P')         -- Paste visual mode
+  vim.keymap.set("c", "<D-v>", "<C-R>+")      -- Paste command mode
   vim.keymap.set("i", "<D-v>", '<ESC>l"+Pli') -- Paste insert mode
 end
 
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>e",
-  ":Neotree toggle<CR>",
-  { noremap = true, silent = true, desc = "Toggle Neo-tree file explorer" }
-)
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>f",
-  ":Neotree focus<CR>",
-  { noremap = true, silent = true, desc = "Focus Neo-tree" }
-)
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>r",
-  ":Neotree reveal<CR>",
-  { noremap = true, silent = true, desc = "Reveal current file in Neo-tree" }
-)
+vim.keymap.set("n", "<C-s>", ":w<CR>") -- Save
 
 -- Allow clipboard copy paste in neovim
 vim.api.nvim_set_keymap("", "<D-v>", "+p<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("!", "<D-v>", "<C-R>+", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("t", "<D-v>", "<C-R>+", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "<D-v>", "<C-R>+", { noremap = true, silent = true })
+
+
+-- Window navigation for terminal
+vim.keymap.set('t', '<C-w>h', '<C-\\><C-n><C-w>h', { desc = 'Move to left window' })
+vim.keymap.set('t', '<C-w>j', '<C-\\><C-n><C-w>j', { desc = 'Move to bottom window' })
+vim.keymap.set('t', '<C-w>k', '<C-\\><C-n><C-w>k', { desc = 'Move to top window' })
+vim.keymap.set('t', '<C-w>l', '<C-\\><C-n><C-w>l', { desc = 'Move to right window' })
+
+vim.keymap.set('n', '<C-a>', 'ggVG', { desc = 'Select all' })
+
+-- Navigation and window management
+vim.keymap.set('n', '<M-h>', '<C-w>h', { desc = 'Move to left window' })
+vim.keymap.set('n', '<M-j>', '<C-w>j', { desc = 'Move to bottom window' })
+vim.keymap.set('n', '<M-k>', '<C-w>k', { desc = 'Move to top window' })
+vim.keymap.set('n', '<M-l>', '<C-w>l', { desc = 'Move to right window' })
+
+-- Window resizing
+vim.keymap.set('n', '<M-Left>', '<cmd>vertical resize -2<CR>', { desc = 'Decrease window width' })
+vim.keymap.set('n', '<M-Right>', '<cmd>vertical resize +2<CR>', { desc = 'Increase window width' })
+vim.keymap.set('n', '<M-Up>', '<cmd>resize +2<CR>', { desc = 'Increase window height' })
+vim.keymap.set('n', '<M-Down>', '<cmd>resize -2<CR>', { desc = 'Decrease window height' })
+
+-- Buffer management
+vim.keymap.set('n', '<M-,>', '<cmd>bprevious<CR>', { desc = 'Previous buffer' })
+vim.keymap.set('n', '<M-.>', '<cmd>bnext<CR>', { desc = 'Next buffer' })
+vim.keymap.set('n', '<M-c>', '<cmd>bdelete<CR>', { desc = 'Close buffer' })
+vim.keymap.set('n', '<M-b>', '<cmd>buffers<CR>', { desc = 'List buffers' })
+
+-- Quick actions
+vim.keymap.set('n', '<M-s>', '<cmd>write<CR>', { desc = 'Quick save' })
+vim.keymap.set('n', '<M-q>', '<cmd>quit<CR>', { desc = 'Quick quit' })
+vim.keymap.set('n', '<M-/>>', '<cmd>nohl<CR>', { desc = 'Clear highlights' })
+
+-- Terminal integration
+vim.keymap.set('n', '<M-t>', '<cmd>terminal<CR>', { desc = 'Open terminal' })
+
+-- File explorer and fuzzy finding
+vim.keymap.set('n', '<M-f>', '<cmd>e .<CR>', { desc = 'Find files' })

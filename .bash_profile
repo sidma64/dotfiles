@@ -3,4 +3,4 @@
 #
 source $HOME/.profile
 
-# [[ -f ~/.bashrc ]] && . ~/.bashrc
+[[ -f ~/.bashrc ]] && . ~/.bashrc

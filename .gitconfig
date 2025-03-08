@@ -53,11 +53,6 @@
 [user]
 	name = sidma64
 	email = toprak.code@gmail.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINGwTEtJRSuGUi/MIXmsH0U1MfN+UJx+bvYEh0ij0xlV
 [gpg]
 	format = ssh
-[credential "https://github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential

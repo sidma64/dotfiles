@@ -4,6 +4,9 @@ export XDG_CACHE_HOME="${HOME}/.cache"
 export XDG_DATA_HOME="${HOME}/.local/share"
 export XDG_STATE_HOME="${HOME}/.local/state"
 
+
+export SSH_AUTH_SOCK=$HOME/.bitwarden-ssh-agent.sock
+
 # Create directories if they don't exist
 for dir in "$XDG_CONFIG_HOME" "$XDG_CACHE_HOME" "$XDG_DATA_HOME" "$XDG_STATE_HOME"; do
     if [ ! -d "$dir" ]; then
@@ -53,6 +56,12 @@ if [ -d "$HOME/go" ]; then
     fi
 fi
 
+export ENVFILE="$HOME/.env"
+if [ ! -f $ENVFILE ]
+then
+  export $(cat $ENVFILE | xargs)
+fi
+
 # Reboot directly to Windows
 # Inspired by http://askubuntu.com/questions/18170/how-to-reboot-into-windows-from-ubuntu
 reboot_to_windows ()
@@ -62,3 +71,7 @@ reboot_to_windows ()
 }
 alias reboot-to-windows='reboot_to_windows'
 
+
+# google () {
+#     xdg-open https
+# }
