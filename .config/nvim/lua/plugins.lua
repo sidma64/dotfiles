@@ -243,6 +243,14 @@ return {
         ["clangd"] = {},
         ["pyright"] = {},
         ["hyprls"] = {},
+        ["ts_ls"] = {},
+        ["html"] = {},
+        ["jsonls"] = {},
+        ["gopls"] = {},
+        ["nixd"] = {},
+        ["nushell"] = {},
+        ["taplo"] = {},
+        ["yamlls"] = {},
       }
       local default_config = {}
       for name, config in pairs(configs) do

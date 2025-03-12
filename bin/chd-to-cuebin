@@ -1,0 +1,18 @@
+#!/bin/bash
+
+echo "PS1 CDH to CUE/BIN Converter"
+
+# Check for CDH files
+if ! ls *.cdh 1> /dev/null 2>&1; then
+    echo "Error: No .cdh files found"
+    exit 1
+fi
+
+# Process files
+for cdh_file in "$(cwd)*.cdh"; do
+    base_name="${cdh_file%.*}"
+    echo "Converting: $cdh_file"
+    chdman extractcd -i "$cdh_file" -o "$base_name.cue" -ob "$base_name.bin"
+done
+
+echo "Done!"

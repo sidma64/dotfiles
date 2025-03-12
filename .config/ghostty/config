@@ -2,8 +2,8 @@ theme = dark:zenbones_dark,light:zenbones_light
 keybind = ctrl+a>n=new_window
 keybind = f11=toggle_fullscreen
 keybind = ctrl+a>f=toggle_fullscreen
-keybind = ctrl+a>u=increase_font_size
-font-family=Source Code Pro
+# keybind = ctrl+a>u=increase_font_size
+font-family=Fira Code
 
 # This is the configuration file for Ghostty.
 #

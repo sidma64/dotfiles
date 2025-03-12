@@ -56,3 +56,5 @@
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINGwTEtJRSuGUi/MIXmsH0U1MfN+UJx+bvYEh0ij0xlV
 [gpg]
 	format = ssh
+[credential]
+	helper = store

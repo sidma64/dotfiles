@@ -75,3 +75,5 @@ alias reboot-to-windows='reboot_to_windows'
 # google () {
 #     xdg-open https
 # }
+
+source "$HOME/.atuin/bin/env"

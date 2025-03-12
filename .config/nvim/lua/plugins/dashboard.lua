@@ -9,9 +9,9 @@ return {
     ---@field formats table<string, snacks.dashboard.Text|fun(item:snacks.dashboard.Item, ctx:snacks.dashboard.Format.ctx):snacks.dashboard.Text>
     {
       width = 60,
-      row = nil,                                                               -- dashboard position. nil for center
-      col = nil,                                                               -- dashboard position. nil for center
-      pane_gap = 4,                                                            -- empty columns between vertical panes
+      row = nil,                                                                   -- dashboard position. nil for center
+      col = nil,                                                                   -- dashboard position. nil for center
+      pane_gap = 4,                                                                -- empty columns between vertical panes
       autokeys = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", -- autokey sequence
       -- These settings are used by some built-in sections
       preset = {
@@ -28,7 +28,7 @@ return {
           { icon = "🗃️", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
           { icon = "📑", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
           { icon = "⚙️ ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
-          { icon = "↻", key = "s", desc = "Restore Session", section = "session" },
+          { icon = "🔁", key = "s", desc = "Restore Session", section = "session" },
           { icon = "💤", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
           { icon = "⛔", key = "q", desc = "Quit", action = ":qa" },
         },

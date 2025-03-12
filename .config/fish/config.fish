@@ -33,7 +33,8 @@ if status is-interactive
     # Setup Zoxide
     if command -q zoxide
         zoxide init fish | source
-    end
+        atuin init fish | source
+end
 
     # Set up fzf key bindings
     if command -q fzf

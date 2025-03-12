@@ -34,18 +34,18 @@ require("lazy").setup({
       config = "🧰",
       ft = "📂",
       init = "⚙️ ",
-      keys = "🔑 ",
+      keys = "🔑",
       plugin = "🔌",
       runtime = "💻",
       require = "🌙",
       source = "📁",
       start = "🚀",
       task = "📌",
-      lazy = "💤 ",
+      lazy = "💤",
       event = "⚡",
-      loaded = "✔️  ",
+      loaded = "✔️ ",
       favorite = "⭐",
-      not_loaded = "❌ ",
+      not_loaded = "❌",
       import = "📥",
     },
   },
@@ -53,7 +53,7 @@ require("lazy").setup({
 
 vim.opt.number = true
 vim.o.clipboard = "unnamedplus"
-vim.cmd([[colorscheme minischeme]])
+vim.cmd([[colorscheme vscode]])
 
 -- Hyprlang LSP
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
