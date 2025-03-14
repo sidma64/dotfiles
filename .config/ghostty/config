@@ -3,7 +3,7 @@ keybind = ctrl+a>n=new_window
 keybind = f11=toggle_fullscreen
 keybind = ctrl+a>f=toggle_fullscreen
 # keybind = ctrl+a>u=increase_font_size
-font-family=Fira Code
+font-family=Source Code Pro
 
 # This is the configuration file for Ghostty.
 #

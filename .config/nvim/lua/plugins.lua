@@ -1,5 +1,9 @@
 return {
   {
+    "xiyaowong/transparent.nvim",
+    opts = {}
+  },
+  {
     "NStefan002/speedtyper.nvim",
     branch = "v2",
     lazy = false,

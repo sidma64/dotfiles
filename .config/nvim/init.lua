@@ -55,6 +55,16 @@ vim.opt.number = true
 vim.o.clipboard = "unnamedplus"
 vim.cmd([[colorscheme vscode]])
 
+
+
+if vim.g.neovide then
+  vim.o.guifont = "Fira Code:h8"
+  vim.g.neovide_opacity = 0.99
+  vim.g.neovide_theme = 'auto'
+  vim.g.neovide_cursor_vfx_mode = "pixiedust"
+  vim.g.neovide_cursor_animation_length = 0.13
+  vim.g.neovide_cursor_trail_size = 0.2
+end
 -- Hyprlang LSP
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
   pattern = { "*.hl", "hypr*.conf" },
