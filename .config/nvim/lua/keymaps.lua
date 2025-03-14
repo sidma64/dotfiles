@@ -26,6 +26,12 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 
 if vim.g.neovide then
   vim.keymap.set("", "<F11>", function() vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen end)
+  vim.keymap.set('v', '<C-S-c>', '"+y')
+  vim.keymap.set('n', '<C-S-v>', '"+p')
+  vim.keymap.set('v', '<C-S-v>', '"+p')
+  vim.keymap.set('c', '<C-S-v>', '"+p')
+  vim.keymap.set('i', '<C-S-v>', '<C-R>+')
+  vim.keymap.set('t', '<C-S-v>', '<C-\\><C-o>"+p')
 end
 
 vim.keymap.set("n", "<C-s>", ":w<CR>") -- Save
