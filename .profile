@@ -11,9 +11,6 @@ for dir in "$XDG_CONFIG_HOME" "$XDG_CACHE_HOME" "$XDG_DATA_HOME" "$XDG_STATE_HOM
     fi
 done
 
-# Set SSH agent
-export SSH_AUTH_SOCK=$HOME/.bitwarden-ssh-agent.sock
-
 # Set PATH to include user's private bin if it exists
 if [ -d "$HOME/bin" ]; then
     PATH="$HOME/bin:$PATH"
@@ -56,8 +53,10 @@ if [ -d "$HOME/go" ]; then
     fi
 fi
 
-export ENVFILE="$HOME/.env"
-if [ ! -f $ENVFILE ]
-then
-  export $(cat $ENVFILE | xargs)
+if [ "$(uname)" = "Darwin" ]; then
+    BREW_BIN=/opt/homebrew/bin/brew
+    if [ -f $BREW_BIN ]; then
+        eval $($BREW_BIN shellenv)
+    fi
 fi
+. "$HOME/.cargo/env"

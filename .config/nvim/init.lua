@@ -58,7 +58,11 @@ vim.cmd([[colorscheme catppuccin]])
 
 
 if vim.g.neovide then
-  vim.o.guifont = "JetBrains Mono,Noto_Color_Emoji:h10"
+  if vim.loop.os_uname().sysname == "Darwin" then
+    vim.o.guifont = "JetBrains Mono,Apple Color Emoji:h14"
+  else
+    vim.o.guifont = "JetBrains Mono,Noto Color Emoji:h10"
+  end
   vim.g.neovide_opacity = 0.99
   vim.g.neovide_theme = 'auto'
   vim.g.neovide_cursor_vfx_mode = "pixiedust"

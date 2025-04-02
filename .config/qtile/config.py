@@ -27,6 +27,7 @@
 from libqtile import bar, layout, qtile, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
+from qtile_extras import widget as widget_extras
 
 # from libqtile.utils import guess_terminal
 
@@ -34,6 +35,9 @@ leader = "mod4"
 terminal = "wezterm"
 
 keys = [
+    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer sset Master 5%-"), desc="Lower Volume by 5%"),
+     Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer sset Master 5%+"), desc="Raise Volume by 5%"), 
+    Key([], "XF86AudioMute", lazy.spawn("amixer sset Master 1+ toggle"), desc="Mute/Unmute Volume"),
     # A list of available commands that can be bound to keys can be found
     # at https://docs.qtile.org/en/latest/manual/config/lazy.html
     # Switch between windows
@@ -108,7 +112,7 @@ keys = [
     Key(
         [leader],
         "r",
-        lazy.spawn("wofi --show drun"),
+        lazy.spawn("fuzzel"),
         desc="Spawn a command using a prompt widget",
     ),
     Key(
@@ -190,16 +194,19 @@ screens = [
                 widget.GroupBox(hide_unused=True),
                 widget.Prompt(),
                 widget.WindowName(),
-                widget.Chord(
-                    chords_colors={
-                        "launch": ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
+                # widget.Chord(
+                #     chords_colors={
+                #         "launch": ("#ff0000", "#ffffff"),
+                #     },
+                #     name_transform=lambda name: name.upper(),
+                # ),
                 # widget.TextBox("default config", name="default"),
                 # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
-                widget.StatusNotifier(),
+                widget_extras.StatusNotifier(),
+                widget.NetGraph(),
+                widget_extras.Bluetooth(),
+                widget.PulseVolume(),
                 # widget.Systray(),
                 widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
                 widget.QuickExit(),

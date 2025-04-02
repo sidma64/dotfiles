@@ -1,9 +1,13 @@
+# Install zinit
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
-set -o emacs
+# Setup Vi mode
+set -o vi
+
+export SSH_AUTH_SOCK=$HOME/.bitwarden-ssh-agent.sock
 
 # Set up fzf key bindings and fuzzy completion
 if command -v fzf 2>&1 >/dev/null; then
@@ -16,7 +20,7 @@ fi
 
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
-# zinit light jeffreytse/zsh-vi-mode
+zinit light jeffreytse/zsh-vi-mode
 zinit light zsh-users/zsh-syntax-highlighting
 
 source ${ZSH}/functions.zsh
@@ -33,4 +37,7 @@ source ${ZSH}/aliases.zsh
 autoload -U compinit promptinit
 
 compinit
-eval "$(atuin init zsh)"
+
+if command -v atuin 2>&1 >/dev/null; then
+  eval "$(atuin init zsh)"
+fi

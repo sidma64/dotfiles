@@ -243,6 +243,7 @@ return {
     dependencies = { "saghen/blink.cmp" },
     config = function()
       local configs = {
+        ["racket_langserver"] = {},
         ["lua_ls"] = {},
         ["clangd"] = {},
         ["pyright"] = {},
