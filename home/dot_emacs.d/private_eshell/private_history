@@ -1,0 +1,5 @@
+echo $SHELL
+ls
+clear
+clear
+lclear
