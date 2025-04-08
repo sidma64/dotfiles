@@ -31,7 +31,6 @@ elif [ -n "$(which nano)" ]; then
     export EDITOR=nano
 fi
 [ -n "$EDITOR" ] && [ -z "$VISUAL" ] && export VISUAL="$EDITOR"
-export PAGER=nvim
 export MANPAGER='nvim +Man!'
 # export LESS="-R"
 
