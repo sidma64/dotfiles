@@ -7,8 +7,6 @@ source "${ZINIT_HOME}/zinit.zsh"
 # Setup Vi mode
 set -o vi
 
-export SSH_AUTH_SOCK=$HOME/.bitwarden-ssh-agent.sock
-
 # Set up fzf key bindings and fuzzy completion
 if command -v fzf 2>&1 >/dev/null; then
   source <(fzf --zsh)
@@ -41,3 +39,5 @@ compinit
 if command -v atuin 2>&1 >/dev/null; then
   eval "$(atuin init zsh)"
 fi
+
+set -a && source $HOME/.env && set +a
