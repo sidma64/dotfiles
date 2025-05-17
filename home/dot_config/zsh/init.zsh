@@ -7,6 +7,13 @@ source "${ZINIT_HOME}/zinit.zsh"
 # Setup Vi mode
 set -o vi
 
+# fnm
+FNM_PATH="/home/sidma/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/sidma/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
+
 # Set up fzf key bindings and fuzzy completion
 if command -v fzf 2>&1 >/dev/null; then
   source <(fzf --zsh)
