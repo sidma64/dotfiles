@@ -1,0 +1,22 @@
+theme = "papercolor-dark"
+
+[editor]
+auto-pairs = true
+mouse = true
+
+[editor.lsp]
+display-progress-messages = true
+display-inlay-hints = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[keys.normal]
+S-h = "goto_line_start"
+S-l = "goto_line_end"
+
+[keys.select]
+S-h = "goto_line_start"
+S-l = "goto_line_end"
