@@ -58,4 +58,12 @@ if [ "$(uname)" = "Darwin" ]; then
         eval $($BREW_BIN shellenv)
     fi
 fi
-. "$HOME/.cargo/env"
+
+if [ -d "$HOME/.deno" ]; then
+    . "$HOME/.deno/env"
+fi
+
+export ENCORE_INSTALL="/home/sidma/.encore"
+if [ -d $ENCORE_INSTALL ]; then
+    export PATH="$ENCORE_INSTALL/bin:$PATH"
+fi
