@@ -1,0 +1,27 @@
+CompileFlags:
+  Add: [-std=c++23, -Wall, -Wextra, -Wpedantic, -Wshadow, -Wconversion, -Wsign-conversion, -Wnull-dereference, -Wold-style-cast, -Wunused, -Wnon-virtual-dtor, -Woverloaded-virtual]
+
+Diagnostics:
+  ClangTidy:
+    Add: [
+      modernize-*, 
+      performance-*, 
+      readability-*, 
+      bugprone-*, 
+      cppcoreguidelines-*, 
+      clang-analyzer-*
+    ]
+    Remove: [
+      cppcoreguidelines-owning-memory, 
+      cppcoreguidelines-pro-type-union-access, 
+      cppcoreguidelines-avoid-magic-numbers
+    ]
+
+InlayHints:
+  Enabled: true
+  ParameterNames: true
+  DeducedTypes: true
+  Designators: true
+
+Hover:
+  ShowAKA: true
