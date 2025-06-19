@@ -4,9 +4,17 @@ local config = wezterm.config_builder()
 
 -- Spawn a fish shell in login mode
 -- config.default_prog = { '/bin/bash', '-l' }
+local function font_exists(name)
+  for _, font in ipairs(wezterm.gui.enumerate_fonts()) do
+    if font.family == name then
+      return true
+    end
+  end
+  return false
+end
 
-config.font = wezterm.font_with_fallback({
-  "Hack",
+local fonts = {
+  { family = "Hack" },
   -- "Terminus",
   -- "Cascadia Code",
   -- { family = "Fira Code" },
@@ -16,9 +24,17 @@ config.font = wezterm.font_with_fallback({
   -- { family = "IBM Plex Mono" },
   -- { family = "Iosevka Term", stretch = "Expanded", weight = "Regular" },
   -- {family = "Consolas", weight = "Regular"},
-  -- { family = "Source Code Pro" },
-  "JetBrains Mono",
-})
+  { family = "Source Code Pro" },
+  { family = "JetBrains Mono" },
+}
+
+for _, font in ipairs(fonts) do
+  if font_exists(font.family or font) then
+    config.font = font
+    break
+  end
+end
+
 
 config.use_resize_increments = true
 
