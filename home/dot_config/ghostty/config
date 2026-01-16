@@ -1,4 +1,4 @@
-theme = dark:Firewatch,light:zenbones_light
+theme = Catppuccin Frappe
 # keybind = ctrl+a>n=new_window
 keybind = f11=toggle_fullscreen
 # keybind = ctrl+a>f=toggle_fullscreen
