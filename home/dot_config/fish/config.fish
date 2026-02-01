@@ -1,3 +1,11 @@
+function envsource
+    for line in (cat $argv | grep -v '^#')
+        set item (string split -m 1 '=' $line)
+        set -gx $item[1] $item[2]
+        echo "Exported key $item[1]"
+    end
+end
+
 if status is-login
     fish_add_path -gpm /usr/local/bin /usr/local/sbin /usr/bin /usr/sbin /bin /sbin
     if test (uname) = Darwin
@@ -31,11 +39,18 @@ if status is-login
 end
 
 if status is-interactive
+    if test -f ~/.env
+        envsource ~/.env
+    end
+
     # Setup Zoxide
     if command -q zoxide
         zoxide init fish | source
+    end
+
+    if command -q atuin
         atuin init fish | source
-end
+    end
 
     # Set up fzf key bindings
     if command -q fzf
